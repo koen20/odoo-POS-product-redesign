@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ProductItem" t-inherit="point_of_sale.ProductItem" t-inherit-mode="extension" owl="1">
+        <xpath expr="//article/div[@class='product-content']" position="replace">
+            <div class="product-content-redesign">
+                <div class="product-name-redesign" t-attf-id="article_product_{{props.product.id}}">
+                    <t t-esc="props.product.display_name"/>
+                </div>
+                <div t-if="price !== '0,00 €'" class="product-price-redesign">
+                    <t t-esc="price"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//article/div[@class='product-img']" position="replace">
+        </xpath>
+    </t>
+</templates>

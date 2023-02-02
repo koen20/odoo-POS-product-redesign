@@ -1,0 +1,15 @@
+.product-content-redesign {
+    height: 100px;
+    width: 122px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.product-name-redesign {
+    color: #5050ff;
+    font-size: 19px;
+}
+
+.product-price-redesign {
+    font-size: 18px;
+}
