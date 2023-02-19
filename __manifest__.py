@@ -18,6 +18,7 @@
         'point_of_sale.assets': [
             "POS-product-redesign/static/src/css/style.css",
             "POS-product-redesign/static/src/xml/product.xml",
+            "POS-product-redesign/static/src/xml/receipt.xml",
         ],
     },
 }
