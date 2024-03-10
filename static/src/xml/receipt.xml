@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
-        <xpath expr="//div[@class='pos-receipt-contact']" position="inside">
-            <t t-if='receipt.partner'>
-                <div style="text-align: center; font-weight: bold;">Klant:
-                    <t t-esc='receipt.partner.name' />
-                </div>
-            </t>
+        <xpath expr="//div[@class='pos-receipt-contact']" position="after">
+            <div class="customer">
+                <t t-if='receipt.partner'>
+                    <span id="customer-header">Klant</span>
+                    <div id="customer">
+                        <t t-esc='receipt.partner.name'/>
+                    </div>
+                    <t t-if="receipt.partner.street">
+                        <div><t t-esc="receipt.partner.street" /></div>
+                    </t>
+                    <t t-if="receipt.partner.street2">
+                        <div><t t-esc="receipt.partner.street2" /></div>
+                    </t>
+                    <div>
+                        <t t-if="receipt.partner.zip" t-esc="receipt.partner.zip"/>
+                        <span> </span>
+                        <t t-if="receipt.partner.city" t-esc="receipt.partner.city"/>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='cashier']" position="replace">
+            <div>--------------------------------</div>
+        </xpath>
+    </t>
+
+    <t t-name="SaleDetailsReport" t-inherit="point_of_sale.SaleDetailsReport" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='orderlines']" position="replace">
+            <div styles="margin-bottom: 3cm;"/>
+        </xpath>
+        <xpath expr="//div[@class='pos-receipt-order-data']" position="replace">
+            <div class="sale-report-date"><t t-esc="date" /></div>
         </xpath>
     </t>
 </templates>

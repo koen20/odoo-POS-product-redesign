@@ -13,3 +13,33 @@
 .product-price-redesign {
     font-size: 18px;
 }
+
+.pos-receipt .pos-receipt-contact {
+    font-size: 22px;
+}
+
+.customer {
+    margin-top: 0.2cm;
+    text-align: center;
+    margin-bottom: 1cm;
+
+    #customer-header {
+        font-weight: bold;
+        font-size: 27px;
+        margin-bottom: 1px;
+    }
+
+    #customer {
+        font-size: 25px;
+    }
+}
+
+.sale-report-date {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pos-receipt-order-data {
+    font-size: 85%;
+}
